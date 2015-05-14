@@ -15,24 +15,19 @@
 				<Literal>
 					<ID>type</ID>
 					<ToolTip>Property type</ToolTip>
-					<Default>int</Default>
+					<Default>string</Default>
 				</Literal>
 				<Literal>
 					<ID>property</ID>
 					<ToolTip>Property name</ToolTip>
 					<Default>MyProperty</Default>
 				</Literal>
-				<Literal>
-					<ID>field</ID>
-					<ToolTip>The variable backing this property</ToolTip>
-					<Default>myVar</Default>
-				</Literal>
 			</Declarations>
 			<Code Language="csharp"><![CDATA[public $type$ $property$
 	{
-		get { return $field$;}
+		get { return _$property$;}
 		set { $field$ = value;}
-	} private $type$ $field$;
+	} private $type$ _$property$;
 	$end$]]>
 			</Code>
 		</Snippet>
