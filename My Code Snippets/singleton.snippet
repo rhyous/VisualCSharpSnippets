@@ -12,33 +12,29 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-				<Literal>
-					<ID>type</ID>
-					<ToolTip>Property type</ToolTip>
-					<Default>int</Default>
-				</Literal>
+                <Literal default="true" Editable="false">
+                    <ID>classname</ID> 
+                    <ToolTip>Class name</ToolTip> 
+                    <Function>ClassName()</Function> 
+                    <Default>ClassNamePlaceholder</Default> 
+                </Literal>
 				<Literal>
 					<ID>property</ID>
 					<ToolTip>Property name</ToolTip>
-					<Default>MyProperty</Default>
-				</Literal>
-				<Literal>
-					<ID>field</ID>
-					<ToolTip>The variable backing this property</ToolTip>
-					<Default>myVar</Default>
+					<Default>Instance</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="csharp"><![CDATA[#region Singleton
-    public $type$ $property$
-	{
-		get { return $field$ ?? ($filed$ = new $type$());}
-	} private $type$ $field$;
-    
-    private $type$()
-    {
-    }
-    #endregion
-	$end$]]>
+        public $classname$ $property$
+        {
+            get { return _$property$ ?? (_$property$ = new $classname$());}
+        } private $classname$ _$property$;
+        
+        private $classname$()
+        {
+        }
+        #endregion
+$end$]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
