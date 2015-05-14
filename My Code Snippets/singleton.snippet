@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Singleton</Title>
+			<Shortcut>singleton</Shortcut>
+			<Description>Code snippet for an automatically implemented a singleton</Description>
+			<Author>Jared Barneck (Rhyous)</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>The variable backing this property</ToolTip>
+					<Default>myVar</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[#region Singleton
+    public $type$ $property$
+	{
+		get { return $field$ ?? ($filed$ = new $type$());}
+	} private $type$ $field$;
+    
+    private $type$()
+    {
+    }
+    #endregion
+	$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

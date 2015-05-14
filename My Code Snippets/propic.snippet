@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>propic</Title>
+            <Shortcut>propic</Shortcut>
+            <Description>Code snippet for property and backing field and method for a ViewModel ICommand property.</Description>
+			<Author>Jared Barneck (Rhyous)</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Property type</ToolTip>
+                    <Default>ICommand</Default>
+                </Literal>
+                <Literal>
+                    <ID>property</ID>
+                    <ToolTip>Property name</ToolTip>
+                    <Default>PropertyCommand</Default>
+                </Literal>
+                <Literal>
+                    <ID>method</ID>
+                    <ToolTip>Method name</ToolTip>
+                    <Default>DoCommand</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp"><![CDATA[public $type$ $property$
+    {
+        get { return _$property$ ?? (_$property$ = new RelayCommand(f => $method$(), b => $method$CanClick())); }
+        set { SetAndNotifyPropertyChanged(ref _$property$, value, () => $property$); }
+    } private $type$ _$property$;
+    
+    private void $method$()
+    {
+    }
+    
+    private bool $method$CanClick()
+    {
+        return true;
+    }$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
