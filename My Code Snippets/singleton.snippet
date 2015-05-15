@@ -25,10 +25,10 @@
 				</Literal>
 			</Declarations>
 			<Code Language="csharp"><![CDATA[#region Singleton
-        public $classname$ $property$
+        public static $classname$ $property$
         {
             get { return _$property$ ?? (_$property$ = new $classname$());}
-        } private $classname$ _$property$;
+        } private static $classname$ _$property$;
         
         private $classname$()
         {
