@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Autofac Unit Test</Title>
+      <Shortcut>autofactt</Shortcut>
+      <Description>Code snippet for testing autofac registrations in a Unit Test class.</Description>
+      <Author>Jared Barneck (Rhyous)</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Type to resolve.</ToolTip>
+					<Default>string</Default>
+				</Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[[TestMethod]
+public void Module_$type$_Transient()
+{
+	var a = _Container.Resolve<$type$>();
+	var b = _Container.Resolve<$type$>();
+	Assert.IsNotNull(a);
+	Assert.AreNotSame(a, b);
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
