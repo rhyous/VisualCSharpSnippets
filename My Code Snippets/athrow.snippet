@@ -19,10 +19,11 @@
           <Default>Exception</Default>
         </Literal>
       </Declarations>
-			<Code Language="csharp"><![CDATA[Assert.ThrowsException<$exception$>(() => 
+			<Code Language="csharp"><![CDATA[var ex = Assert.ThrowsException<$exception$>(() => 
             {
                 $selected$ 
-            });$end$]]></Code>
+            });
+			Assert.AreEqual("", ex.Message);$end$]]></Code>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
